@@ -1,0 +1,38 @@
+{
+  "id" : "46e2418e-b2b2-4ae1-bc22-91e18746e153",
+  "request" : {
+    "urlPath" : "/open-clip-with-files/command",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['cabinetClient'][?(@.['cabinetId'] == '1:1:1:1-1_kollectionId_dramaId_clientId')]"
+    }, {
+      "matchesJsonPath" : "$.['cabinetClient'].['client'][?(@.['id'] == 'clientId')]"
+    }, {
+      "matchesJsonPath" : "$.['cabinetClient'].['client'][?(@.['name'] == 'clientName')]"
+    }, {
+      "matchesJsonPath" : "$.['sourceFiles'][*][?(@.['name'] == 'Hello.docx')]"
+    }, {
+      "matchesJsonPath" : "$.['sourceFiles'][*][?(@.['size'] == 3000)]"
+    }, {
+      "matchesJsonPath" : "$.['sourceFiles'][*][?(@.['creator'] == 'Steve Jobs')]"
+    }, {
+      "matchesJsonPath" : "$.['sourceFiles'][*][?(@.['createdOn'] =~ /^-?\\d{1,19}$/)]"
+    }, {
+      "matchesJsonPath" : "$.['sourceFiles'][*][?(@.['modifiedOn'] =~ /^-?\\d{1,19}$/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"entityIds\":[\"a2d8f53e-aea4-44ac-abcd-3f48a7f64b9e\"],\"requestFailed\":false,\"failureMessage\":null}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template", "spring-cloud-contract" ]
+  },
+  "uuid" : "46e2418e-b2b2-4ae1-bc22-91e18746e153"
+}

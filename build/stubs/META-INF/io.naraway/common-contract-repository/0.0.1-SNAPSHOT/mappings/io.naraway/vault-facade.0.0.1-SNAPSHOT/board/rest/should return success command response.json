@@ -1,0 +1,34 @@
+{
+  "id" : "0592683f-d043-40a7-84c9-b887a2cc2105",
+  "request" : {
+    "urlPath" : "/feature/clip/open-cabinet/command",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['cabinetPath'][?(@.['stageId'] == '1:1:1:1-1')]"
+    }, {
+      "matchesJsonPath" : "$.['cabinetPath'][?(@.['kollectionId'] == 'kollectionId')]"
+    }, {
+      "matchesJsonPath" : "$.['cabinetPath'][?(@.['dramaId'] == 'dramaId')]"
+    }, {
+      "matchesJsonPath" : "$.['cabinetClient'][?(@.['cabinetId'] == '1:1:1:1-1_kollectionId_dramaId_clientId')]"
+    }, {
+      "matchesJsonPath" : "$.['cabinetClient'].['client'][?(@.['id'] == 'clientId')]"
+    }, {
+      "matchesJsonPath" : "$.['cabinetClient'].['client'][?(@.['name'] == 'clientName')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"entityIds\":[\"1:1:1:1-1_kollectionId_dramaId_clientId\"],\"requestFailed\":false,\"failureMessage\":null}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template", "spring-cloud-contract" ]
+  },
+  "uuid" : "0592683f-d043-40a7-84c9-b887a2cc2105"
+}
