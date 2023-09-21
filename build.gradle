@@ -61,7 +61,7 @@ publishing {
 
     repositories {
         maven {
-            url = 'http://localhost:8081/repository/maven-snapshots/'
+            url = 'http://43.200.221.47:8081/repository/maven-snapshots/'
             allowInsecureProtocol true
             credentials {
                 username = 'admin'
